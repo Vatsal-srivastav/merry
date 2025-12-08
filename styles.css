@@ -1,0 +1,54 @@
+/* styles.css - modern glass UI */
+:root{
+  --bg:#0b1220;
+  --glass: rgba(255,255,255,0.06);
+  --accent1: linear-gradient(135deg,#60a5fa 0%,#6ee7b7 100%);
+  --muted: rgba(255,255,255,0.6);
+}
+
+html,body,#app { height:100%; margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(1200px 600px at 10% 20%, rgba(96,165,250,0.06), transparent), radial-gradient(1000px 400px at 90% 80%, rgba(110,231,183,0.04), transparent), var(--bg); color:#ecf8ff; -webkit-font-smoothing:antialiased; -webkit-user-select:none; }
+
+.topbar {
+  height:92px;
+  display:flex;
+  align-items:center;
+  padding:18px;
+  gap:14px;
+  backdrop-filter: blur(10px) saturate(1.05);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 30px rgba(2,6,23,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.window-controls { display:flex; gap:8px; margin-right:6px; }
+.ctrl { width:34px; height:28px; border-radius:6px; border:none; background:transparent; color:var(--muted); font-weight:700; cursor:pointer; transition: all .15s ease; }
+.ctrl:hover { transform: translateY(-1px); color:white; background: rgba(255,255,255,0.02); }
+.ctrl.close:hover { background: rgba(255,80,80,0.12); color:#ffefef }
+
+.brand { display:flex; align-items:center; gap:12px; margin-right:8px; }
+.logo { filter: drop-shadow(0 6px 18px rgba(96,165,250,0.12)); }
+.title { font-weight:700; font-size:18px; color: #e6f7ff; letter-spacing:0.2px; }
+
+.address-group { display:flex; align-items:center; gap:8px; flex:1; min-width:0; }
+.nav-btn { width:40px; height:44px; border-radius:8px; border:none; background:rgba(255,255,255,0.02); color:var(--muted); cursor:pointer; font-weight:700; transition: all .12s; }
+.nav-btn:hover { transform: translateY(-2px); color:white; background: rgba(255,255,255,0.03); }
+
+.address { flex:1; height:44px; border-radius:12px; padding:10px 14px; border:none; outline:none; background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); color:#eaf6ff; font-size:15px; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02); }
+.address::placeholder { color: rgba(255,255,255,0.35) }
+
+.go-btn { width:64px; height:44px; border-radius:10px; border:none; background: linear-gradient(90deg,#60a5fa,#6ee7b7); color:#00222a; font-weight:700; cursor:pointer; transition: transform .12s; }
+.go-btn:active { transform: scale(.99) }
+
+.actions { display:flex; gap:10px; margin-left:12px; }
+.icon-btn { background:transparent; border:none; color:var(--muted); font-weight:600; cursor:pointer; padding:8px 10px; border-radius:10px; }
+.icon-btn:hover { color:white; background: rgba(255,255,255,0.02) }
+
+.content { height: calc(100% - 92px - 36px); /* header + footer */ position:relative; overflow:hidden; }
+.home-overlay { display:flex; justify-content:center; align-items:center; height:100%; pointer-events:none; }
+.hero { text-align:center; pointer-events:auto; margin-top:30px; backdrop-filter: blur(6px) saturate(1.05); padding:36px; border-radius:16px; background: linear-gradient(135deg, rgba(96,165,250,0.06), rgba(110,231,183,0.03)); box-shadow: 0 10px 80px rgba(2,6,23,0.6); max-width:820px; }
+.hero h1 { font-size:34px; margin:0 0 8px; color:#e9fbff; letter-spacing:-0.6px; }
+.lead { margin:0; color: rgba(255,255,255,0.75); font-size:15px; }
+
+.statusbar { height:36px; display:flex; justify-content:space-between; align-items:center; padding:6px 18px; border-top: 1px solid rgba(255,255,255,0.02); color: rgba(255,255,255,0.6); font-size:13px; background: linear-gradient(0deg, rgba(255,255,255,0.006), transparent); }
+
+#url-preview { font-weight:600; color: rgba(255,255,255,0.45); margin-left:12px; max-width:60%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
