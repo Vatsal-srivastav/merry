@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Breathtaking Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="window-controls">
+        <button id="min-btn" class="ctrl">—</button>
+        <button id="max-btn" class="ctrl">▢</button>
+        <button id="close-btn" class="ctrl close">✕</button>
+      </div>
+
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="logo">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#6EE7B7"></stop>
+              <stop offset="1" stop-color="#60A5FA"></stop>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#g)"></rect>
+          <path d="M7 12h10M9 8h6M9 16h6" stroke="#06202A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="title">Halo</div>
+      </div>
+
+      <div class="address-group">
+        <button id="back" class="nav-btn" title="Back">◀</button>
+        <button id="forward" class="nav-btn" title="Forward">▶</button>
+        <input id="address" class="address" placeholder="Search or enter address" spellcheck="false" />
+        <button id="go" class="go-btn">Go</button>
+      </div>
+
+      <div class="actions">
+        <button id="reload" title="Reload" class="icon-btn">⟳</button>
+        <button id="bookmark" title="Bookmark" class="icon-btn">★</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- BrowserView appears below header; this area is decorative and shows a background when no page loaded -->
+      <div class="home-overlay">
+        <div class="hero">
+          <h1>Beautiful Browsing. Block the noise.</h1>
+          <p class="lead">Fast, private, ad-free by default. Type a URL or search and press Enter.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="statusbar">
+      <div id="status">Ready</div>
+      <div id="url-preview"></div>
+    </footer>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
